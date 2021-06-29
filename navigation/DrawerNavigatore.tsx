@@ -2,23 +2,21 @@ import { Ionicons } from '@expo/vector-icons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
 
-import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import { DrawerParamList, TabOneParamList, TabTwoParamList } from '../types';
+import { DrawerParamList, } from '../types';
 import TabOneNavigator from '../screens/TabOneScreen';
-import TabTwoNavigator from '../screens/TabTwoScreen';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 import HomeNavigator from '../screens/drawerOptions/Home';
+import {DrawerContent} from './DrawerContent';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
+
 export default function DrawerNavigator() {
     const colorScheme = useColorScheme();
-
     return (
         <Drawer.Navigator 
-            initialRouteName="TabOne"
-            drawerContent={() => <DrawerContent />}
+            initialRouteName="Home"
+            drawerContent={() => <DrawerContent />} 
             screenOptions={{ 
                 headerShown: true
                  }}

@@ -35,6 +35,7 @@ export type DrawerParamList = {
   Fuse: undefined;
   Market: undefined;
   EvoMatic: undefined;  
+  DrawerContent: undefined; 
 };
 
 // screens ########################################################

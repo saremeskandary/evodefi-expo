@@ -17,14 +17,10 @@ import {
 } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export function DrawerContent(props) {
+export function DrawerContent(props:any) {
     return (
         <DrawerContentScrollView {...props}>
-            <View
-                style={
-                    styles.drawerContent,
-        }
-            >
+            <View style={styles.drawerContent}>
                 <View style={styles.userInfoSection}>
                     <Avatar.Image
                         source={{

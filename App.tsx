@@ -1,32 +1,43 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import { Provider as PaperProvider,} from 'react-native-paper';
+import { DTheme, LTheme } from './constants/Theme';
+
+export const PreferencesContext = React.createContext({
+  toggleTheme: () => {},
+  isThemeDark: false,
+});
+
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
+  const [isThemeDark, setIsThemeDark] = React.useState(false);
+  let theme = isThemeDark ? DTheme : LTheme;
 
+  const toggleTheme = React.useCallback(() => {
+    return setIsThemeDark(!isThemeDark);
+  }, [isThemeDark]);
+
+  const preferences = React.useMemo(
+    () => ({
+      toggleTheme,
+      isThemeDark,
+    }),
+    [toggleTheme, isThemeDark]
+  );
+  const isLoadingComplete = useCachedResources();
   if (!isLoadingComplete) {
     return null;
   } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
+  return (
+    <PreferencesContext.Provider value={preferences}>
+      <PaperProvider theme={theme}>
+        <Navigation theme={theme}/>
+      </PaperProvider>
+    </PreferencesContext.Provider>
+  );}
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     background
-//   },
-// });
+
 

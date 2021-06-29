@@ -1,8 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { Text, View } from '../../components/Themed';
+import { Text } from 'react-native-paper';
 import { HomeParamList } from '../../types';
 
 function HomeScreen() {
