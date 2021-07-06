@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler';
+import { useColorScheme } from "react-native";
 import React from 'react';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
-import { Provider as PaperProvider,} from 'react-native-paper';
+import { Provider as PaperProvider, useTheme} from 'react-native-paper';
 import { DTheme, LTheme } from './constants/Theme';
 
 export const PreferencesContext = React.createContext({
