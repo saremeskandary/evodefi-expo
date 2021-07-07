@@ -12,10 +12,9 @@ export const LTheme = {
     card: "#181329",
     text: "#ACA2CC",
     title: "#ffffff",
-    border: "rgb(199, 199, 204)",
+    border: "#3e3852",
     notification: "rgb(255, 69, 58)",
-    myOwnColor: "#BADA55",
-  },
+},
 };
 export const DTheme = {
   ...DarkTheme,
@@ -28,7 +27,7 @@ export const DTheme = {
     card: "#181329",
     text: "#ACA2CC",
     title: "#ffffff",
-    border: "rgb(199, 199, 204)",
+    border: "#3e3852",
     notification: "rgb(255, 69, 58)",
   },
 };
