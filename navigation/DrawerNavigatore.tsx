@@ -9,6 +9,7 @@ import HomeNavigator from "../screens/drawerOptions/Home";
 import { DrawerContent } from "./DrawerContent";
 import NFTbridgeNavigator from "../screens/drawerOptions/bridge/NFTbridge";
 import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
+import PoolsNavigator from "../screens/drawerOptions/Pools";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -16,7 +17,7 @@ export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
   return (
     <Drawer.Navigator
-      initialRouteName="NFTbridge"
+      initialRouteName="Pools"
       // drawerContent={() => <DrawerContent />}
       screenOptions={{
         headerShown: true,
@@ -52,6 +53,15 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="MonsterBridge"
         component={MonsterBridgeNavigator}
+        options={
+          {
+            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          }
+        }
+      />
+      <Drawer.Screen
+        name="Pools"
+        component={PoolsNavigator}
         options={
           {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,

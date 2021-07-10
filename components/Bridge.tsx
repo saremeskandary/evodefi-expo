@@ -7,7 +7,6 @@ import {
   Avatar,
   TextInput,
   Dialog,
-  Paragraph,
   Portal,
   IconButton,
 } from "react-native-paper";
@@ -54,7 +53,6 @@ export default function Bridge(props: BridgeInterface) {
             compact={true}
             onPress={() => Linking.openURL(props.arrowAction)}
           >
-            {""}
           </Button>
           <BridgeItemView
             icon={{ uri: " https://evodefi.com/images/currencies/polygon.png" }}

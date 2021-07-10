@@ -32,8 +32,19 @@ export const DTheme = {
   },
 };
 
+export const CustomStyle = StyleSheet.create({
+  buttonPurple: {
+    backgroundColor: "#4d38e5",
+    borderRadius: 6,
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: "500",
+    fontSize: "400",
+  },
+});
+
 export const TextStyle = StyleSheet.create({
-  title: { fontSize: 20, color: "#ffffff", fontWeight: "bold" }, //TODO use color scheme
+  title: { fontSize: 20, color: "#ffffff", fontWeight: "bold" }, //TODO use colaor scheme
 
   small: { fontSize: 14, padding: 10 },
   smallB: { fontSize: 14, padding: 10, color: "#ffffff", fontWeight: "bold" },
