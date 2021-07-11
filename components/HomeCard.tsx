@@ -13,7 +13,7 @@ export default function HomeCard(props: HomeCardInterface) {
   return (
     <View style={[styles.container, {backgroundColor : props.backgroundColor}]}>
       <Text style={styles.title}>{props.title}</Text>
-      <Seperator/>
+      {/* <Seperator/> */}
       <View style={styles.Children}>{props.children}</View>      
     </View>
   );
@@ -21,10 +21,11 @@ export default function HomeCard(props: HomeCardInterface) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexWrap: "wrap",
+    flexGrow: 1,
     margin: 10,
-    height: "90%",
     borderRadius: 5,
+    minWidth: 300,
   },
   title: {
     fontWeight: "bold",
@@ -34,5 +35,5 @@ const styles = StyleSheet.create({
   },
   Children: {
     padding: 20,
-  }
+  },
 });

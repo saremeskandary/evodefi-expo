@@ -86,26 +86,22 @@ export default function TokenCard(props: TokenCardInterface) {
                 icon="open-in-new"
               />
             </View>
-            <View style={styles.rowAndCenter}>
-              <Text
-                style={[
-                  TextStyle.medium,
-                  { color: "#ffffff", fontWeight: "200" },
-                ]}
-              ></Text>
-            </View>{" "}
-            <Button
-              mode="text"
-              color="#634efc"
-              onPress={() =>
-                props.MainnetExplorer
-                  ? Linking.openURL(props.MainnetExplorer)
-                  : null
-              }
-            >
-              <Text style={TextStyle.smallB}>View on Mainnet Explorer</Text>
-              <Avatar.Icon size={24} icon="open-in-new" color="#0191e0" />
-            </Button>
+            <View style={styles.rowAndCenter}></View>
+            <View style={{ alignItems: "center", flexDirection: "row-reverse" }}>
+              <Button
+                mode="text"
+                color="#634efc"
+                style={{ alignItems: "center" }}
+                onPress={() =>
+                  props.MainnetExplorer
+                    ? Linking.openURL(props.MainnetExplorer)
+                    : null
+                }
+              >
+                <Text style={TextStyle.smallB}>View on Mainnet Explorer</Text>
+              </Button>
+              <Avatar.Icon size={30} icon="open-in-new" color="#0191e0" />
+            </View>
           </View>
         ) : null}
       </View>
@@ -117,10 +113,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1E1835",
     // flexGrow: 1,
-    flexWrap: "wrap",
+    // flex:1,
     borderRadius: 10,
     justifyContent: "space-between",
     minWidth: 300,
+    minHeight: 350,
     margin: 10,
   },
   rowAndCenter: {

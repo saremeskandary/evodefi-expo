@@ -39,7 +39,7 @@ export const CustomStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontWeight: "500",
-    fontSize: "400",
+    fontSize: 400,
   },
 });
 

@@ -16,9 +16,9 @@ export function Dictionary(props: DictionaryInterface) {
   return (
     <View style={styles.dictionary}>
       <Text style={props.tStyle}>{props.title}</Text>
-      <View style={[{ justifyContent: "flex-start", flexDirection:"row", alignItems:'baseline' }, props.iStyle]}>
+      <View style={[{ justifyContent: "flex-start", flexDirection:"row", alignItems:'center' }, props.iStyle]}>
         {props.icon ? (
-          <Avatar.Icon size={24} icon={props.icon} color="#0191e0" />
+          <Avatar.Icon size={30} icon={props.icon} color="#0191e0" />
         ) : null}
         <Text
           style={

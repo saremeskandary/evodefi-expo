@@ -26,13 +26,14 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignItems: "center",
     justifyContent: "center",
+    height:40,
     paddingHorizontal: 24,
     paddingVertical: 6,
-    margin:10
+    margin: 10,
   },
   title: {
     fontWeight: "500",
     fontSize: 14,
-    color: '#fff'
+    color: "#fff",
   },
 });
