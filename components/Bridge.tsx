@@ -12,6 +12,7 @@ import {
 } from "react-native-paper";
 import { TextStyle } from "../constants/Theme";
 
+
 function BridgeItemView(props: { icon: any; name: string }) {
   return (
     <View style={styles.BridgeItem}>
@@ -44,7 +45,7 @@ export default function Bridge(props: BridgeInterface) {
 
         <View style={styles.BRItemView}>
           <BridgeItemView
-            icon={require("../assets/images/bsc.jpg")}
+            icon={{uri: 'https://bin.bnbstatic.com/image/admin_mgs_image_upload/20201110/550eda20-1b9a-4bc7-9a65-e4a329e8bb57.png'}}
             name="BSC"
           />
           <Button

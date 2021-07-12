@@ -112,8 +112,6 @@ export default function TokenCard(props: TokenCardInterface) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1E1835",
-    // flexGrow: 1,
-    // flex:1,
     borderRadius: 10,
     justifyContent: "space-between",
     minWidth: 300,

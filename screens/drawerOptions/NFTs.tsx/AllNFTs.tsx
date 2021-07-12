@@ -1,11 +1,11 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, FlatList, View,Dimensions } from "react-native";
+import { StyleSheet, FlatList, View,Dimensions, ScrollView } from "react-native";
 import { Text } from "react-native-paper";
 import { AllNFTsParamList } from "../../../types";
-import TokenCard from "../../../components/TokenCard";
-import { PoolData } from "../../../data/PoolData";
 import { TextStyle } from "../../../constants/Theme";
+import NFTCard from "../../../components/NFTCard";
+import { NFTsData } from "../../../data/NFTsData";
 
 const window = Dimensions.get("window");
 
@@ -19,7 +19,7 @@ function AllNFTsScreen() {
   useEffect(() => {
     Dimensions.addEventListener("change", onChange);
     dimensions.window.width > 500
-      ? setCol(Math.floor(dimensions.window.width / 320))
+      ? setCol(Math.floor(dimensions.window.width / 300))
       : setCol(1);
     return () => {
       console.log(col);
@@ -28,32 +28,23 @@ function AllNFTsScreen() {
   });
 
   return (
-    <View style={styles.container}>
-      <Text style={TextStyle.title}>All NFTs</Text>
-      <Text style={TextStyle.small}>
-        Collect NFTs and use it to get incredible bonuses!!!
-      </Text>
-
-      <FlatList
-        contentContainerStyle={{ alignSelf: "center" }}
-        numColumns={col}
-        key={col}
-        data={PoolData}
-        renderItem={({ item, index }) => (
-          <TokenCard
-            key={item.name}
-            icon={item.icon}
-            name={item.name}
-            Nofee={item.Nofee}
-            Xnum={item.Xnum}
-            MaxAPR={item.MaxAPR}
-            BaseAPR={item.BaseAPR}
-            DepositFee={item.DepositFee}
-            TotalLiquidity={item.TotalLiquidity}
-          />
-        )}
-      />
-    </View>
+    <FlatList
+      contentContainerStyle={styles.list}
+      style={{ marginBottom: 20 }}
+      numColumns={col}
+      keyExtractor={(item) => item.name}
+      key={col}
+      data={NFTsData}
+      renderItem={({ item }) => (
+        <NFTCard
+          key={item.name}
+          image={item.image}
+          name={item.name}
+          Available={item.Available}
+          description={item.description}
+        />
+      )}
+    />
   );
 }
 
@@ -71,11 +62,14 @@ export default function AllNFTsNavigator() {
   );
 }
 
-// let Size = windowHeight == 120 ? "10%" : "100%";
-
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexwrap: "wrap",
+    padding: 10,
+  },
+  list: {
+    // justifyContent:'center',
+    // alignItems:'stretch',
+    marginBottom: 10,
+    alignSelf: "center",
   },
 });

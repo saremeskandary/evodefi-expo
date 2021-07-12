@@ -10,6 +10,8 @@ import { DrawerContent } from "./DrawerContent";
 // import NFTbridgeNavigator from "../screens/drawerOptions/bridge/NFTbridge";
 // import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
 import PoolsNavigator from "../screens/drawerOptions/Pools";
+// import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
+import AllNFTsNavigator from "../screens/drawerOptions/NFTs.tsx/AllNFTs";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -17,7 +19,7 @@ export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
   return (
     <Drawer.Navigator
-      initialRouteName="Pools"
+      initialRouteName="AllNFT"
       // drawerContent={() => <DrawerContent />}
       screenOptions={{
         headerShown: true,
@@ -49,8 +51,8 @@ export default function DrawerNavigator() {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
           }
         }
-      /> */}
-      {/* <Drawer.Screen
+      />
+      <Drawer.Screen
         name="MonsterBridge"
         component={MonsterBridgeNavigator}
         options={
@@ -62,6 +64,15 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="Pools"
         component={PoolsNavigator}
+        options={
+          {
+            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          }
+        }
+      />
+      <Drawer.Screen
+        name="AllNFT"
+        component={AllNFTsNavigator}
         options={
           {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
