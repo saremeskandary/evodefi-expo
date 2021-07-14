@@ -46,12 +46,12 @@ export const CustomStyle = StyleSheet.create({
 export const TextStyle = StyleSheet.create({
   title: { fontSize: 20, color: "#ffffff", fontWeight: "bold" }, //TODO use colaor scheme
 
-  small: { fontSize: 14, padding: 10 },
-  smallB: { fontSize: 14, padding: 10, color: "#ffffff", fontWeight: "bold" },
+  small: { fontSize: 14, paddingVertical: 10 },
+  smallB: { fontSize: 14, paddingVertical: 10, color: "#ffffff", fontWeight: "bold" },
 
-  medium: { fontSize: 16, padding: 10 },
-  mediumB: { fontSize: 16, padding: 10, color: "#ffffff", fontWeight: "bold" },
+  medium: { fontSize: 16, paddingVertical: 10 },
+  mediumB: { fontSize: 16, paddingVertical: 10, color: "#ffffff", fontWeight: "bold" },
 
-  larg: { fontSize: 40, padding: 10, color: "#ffffff" },
-  largB: { fontSize: 40, padding: 10, color: "#ffffff", fontWeight: "bold" },
+  larg: { fontSize: 40, paddingVertical: 10, color: "#ffffff" },
+  largB: { fontSize: 40, paddingVertical: 10, color: "#ffffff", fontWeight: "bold" },
 });

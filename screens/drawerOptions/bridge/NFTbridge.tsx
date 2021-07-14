@@ -11,7 +11,7 @@ function NFTbridgeScreen() {
     <View>
       <Bridge
         commission={" NFT bridge has commission 0.1 GenX "}
-        arrowAction={"https://evo-matic.com/nft/bridge"}
+        arrowAction={"https://evo-matic.com/nft/bridge"} //TODO maybe this cause a problem
         selectionTitle={"Select NFT"}
         plusePressed={
           <Dialog.Content
