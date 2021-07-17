@@ -3,13 +3,9 @@ import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   FlatList,
-  View,
   Dimensions,
-  ScrollView,
 } from "react-native";
-import { Text } from "react-native-paper";
 import { MyNFTsParamList } from "../../../types";
-import { TextStyle } from "../../../constants/Theme";
 import NFTCard from "../../../components/NFTCard";
 import { NFTsData } from "../../../data/NFTsData";
 
@@ -51,7 +47,7 @@ function MyNFTsScreen() {
         />
       )}
     />
-  );
+  );  
 }
 
 const MyNFTsStack = createStackNavigator<MyNFTsParamList>();

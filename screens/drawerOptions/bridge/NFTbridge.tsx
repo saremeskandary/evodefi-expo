@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { StyleSheet, View, Button } from "react-native";
-import { Dialog, Title, TouchableRipple } from "react-native-paper";
+import { Dialog, Title } from "react-native-paper";
 import { NFTbridgeParamList } from "../../../types";
 import { TextStyle } from "../../../constants/Theme";
 import Bridge from "../../../components/bridge";

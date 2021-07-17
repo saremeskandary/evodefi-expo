@@ -21,7 +21,7 @@ function FuseNFTScreen() {
   return (
     <View style={styles.container}>
       <ScrollView style={{ flex: 1 }}>
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 20, fontWeight: "bold", margin:10 }}>
           Add 4 identical nft and get +1 lvl
         </Text>
         <View style={styles.cardContainer}>
