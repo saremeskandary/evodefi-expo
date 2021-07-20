@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { StyleSheet } from "react-native";
 import { TouchableRipple, Text } from "react-native-paper";
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignItems: "center",
     justifyContent: "center",
-    height:40,
+    height: 40,
     paddingHorizontal: 24,
     paddingVertical: 6,
     margin: 10,

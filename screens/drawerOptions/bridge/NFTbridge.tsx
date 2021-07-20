@@ -4,11 +4,10 @@ import { StyleSheet, View, Button } from "react-native";
 import { Dialog, Title } from "react-native-paper";
 import { NFTbridgeParamList } from "../../../types";
 import { TextStyle } from "../../../constants/Theme";
-import Bridge from "../../../components/bridge";
+import Bridge from "../../../components/Bridge";
 
 function NFTbridgeScreen() {
   return (
-    <View>
       <Bridge
         commission={" NFT bridge has commission 0.1 GenX "}
         arrowAction={"https://evo-matic.com/nft/bridge"} //TODO maybe this cause a problem
@@ -32,7 +31,6 @@ function NFTbridgeScreen() {
           </Dialog.Content>
         } //check dialog in paper
       ></Bridge>
-    </View>
   );
 }
 const NFTbridgeStack = createStackNavigator<NFTbridgeParamList>();
@@ -52,6 +50,8 @@ export default function NFTbridgeNavigator() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20,
+    maxWidth:800,
+    // justifyContent: 'center',
+    alignItems: 'center'
   },
 });

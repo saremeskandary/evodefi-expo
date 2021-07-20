@@ -1,17 +1,16 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, Linking } from "react-native";
+import { StyleSheet, View, ScrollView, Linking, TextInput } from "react-native";
 import {
   TouchableRipple,
   Text,
   Button,
   Avatar,
-  TextInput,
+  useTheme,
   Dialog,
   Portal,
   IconButton,
 } from "react-native-paper";
 import { TextStyle } from "../constants/Theme";
-
 
 function BridgeItemView(props: { icon: any; name: string }) {
   return (
@@ -35,6 +34,7 @@ export default function Bridge(props: BridgeInterface) {
   const [visible, setVisible] = React.useState(false);
   const showDialog = () => setVisible(true);
   const hideDialog = () => setVisible(false);
+  const { colors } = useTheme();
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -45,16 +45,19 @@ export default function Bridge(props: BridgeInterface) {
 
         <View style={styles.BRItemView}>
           <BridgeItemView
-            icon={{uri: 'https://bin.bnbstatic.com/image/admin_mgs_image_upload/20201110/550eda20-1b9a-4bc7-9a65-e4a329e8bb57.png'}}
+            icon={{
+              uri: "https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=013",
+            }}
             name="BSC"
           />
-          <Button
+          <IconButton
+            style={{ flexGrow: 1 }}
             icon="arrow-right"
-            mode="contained"
-            compact={true}
-            onPress={() => Linking.openURL(props.arrowAction)}
-          >
-          </Button>
+            size={30}
+            onPress={() =>
+              props.arrowAction ? Linking.openURL(props.arrowAction) : null
+            }
+          />
           <BridgeItemView
             icon={{ uri: " https://evodefi.com/images/currencies/polygon.png" }}
             name="Polygon"
@@ -92,10 +95,12 @@ export default function Bridge(props: BridgeInterface) {
           </Portal>
         </View>
 
-        <View style={{ marginBottom: 20 }}>
+        <View style={styles.inputContainer}>
           <Text style={TextStyle.medium}>Enter address to send</Text>
           <TextInput
-            style={styles.TextInput}
+            style={[styles.TextInput, { color: colors.text }]}
+            multiline={true}
+            textContentType="oneTimeCode"
             value={text}
             onChangeText={(text) => setText(text)}
           />
@@ -117,18 +122,26 @@ export default function Bridge(props: BridgeInterface) {
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    alignSelf: "center",
     margin: 20,
-    // justifyContent: 'center',
+    maxWidth: 800,
+    justifyContent: "center",
     alignItems: "center",
+    flexWrap: "wrap",
     // alignContent: 'center'
   },
   BRItemView: {
+    flex: 1,
     flexDirection: "row",
+    flexWrap: "wrap",
     alignItems: "center",
     marginTop: 30,
+    maxWidth: 800,
+    justifyContent: "center",
   },
   BridgeItem: {
     alignItems: "center",
@@ -137,8 +150,10 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     flexDirection: "row",
     height: 60,
-    width: 250,
+    minWidth: 350,
+    flexGrow: 3,
     paddingLeft: 20,
+    margin: 10,
   },
   bigButton: {
     height: 300,
@@ -159,16 +174,22 @@ const styles = StyleSheet.create({
   textInBB: {
     color: "#0191e0",
   },
+  inputContainer: {
+    alignSelf: "stretch",
+    marginVertical: 10,
+  },
   TextInput: {
     borderWidth: 2,
     borderColor: "#3e3852",
-    borderTopRadius: 10,
-    paddingHorizontal: 200,
+    alignSelf: "stretch",
+    minHeight:40,
+    padding: 20,
+    fontSize:20,
   },
   lastButton: {
     justifyContent: "center",
     backgroundColor: "#4d38e5",
-    paddingHorizontal: 200,
     paddingVertical: 10,
+    alignSelf: "stretch",
   },
 });

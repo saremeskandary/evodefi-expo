@@ -11,23 +11,43 @@ interface DictionaryInterface {
   icon?: string;
   iStyle?: false;
 }
-
-export function Dictionary(props: DictionaryInterface) {
+export function Dictionary({
+  title,
+  tStyle,
+  content,
+  cStyle,
+  icon,
+  iStyle,
+}: DictionaryInterface) {
   return (
     <View style={styles.dictionary}>
-      <Text style={props.tStyle}>{props.title}</Text>
-      <View style={[{ justifyContent: "flex-start", flexDirection:"row", alignItems:'center' }, props.iStyle]}>
-        {props.icon ? (
-          <Avatar.Icon size={30} icon={props.icon} color="#0191e0" />
+      <Text style={tStyle}>{title}</Text>
+      <View
+        style={[
+          {
+            justifyContent: "flex-start",
+            flexDirection: "row",
+            alignItems: "center",
+          },
+          iStyle,
+        ]}
+      >
+        {icon ? (
+          <Avatar.Icon
+            size={30}
+            icon={icon}
+            color="#0191e0"
+            style={{ marginHorizontal: 5 }}
+          />
         ) : null}
         <Text
           style={
-            props.cStyle
-              ? props.cStyle
+            cStyle
+              ? cStyle
               : [TextStyle.medium, { color: "#ffffff", fontWeight: "200" }]
           }
         >
-          {props.content}
+          {content}
         </Text>
       </View>
     </View>
@@ -36,10 +56,10 @@ export function Dictionary(props: DictionaryInterface) {
 
 const styles = StyleSheet.create({
   dictionary: {
-    flex:1,
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: 10,
   },
 });

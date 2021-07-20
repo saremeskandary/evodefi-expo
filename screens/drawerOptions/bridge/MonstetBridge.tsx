@@ -4,7 +4,7 @@ import { Button, StyleSheet, View } from "react-native";
 import { Dialog, Paragraph, TouchableRipple } from "react-native-paper";
 import { MonsterBridgeParamList } from "../../../types";
 import { TextStyle } from "../../../constants/Theme";
-import Bridge from "../../../components/bridge";
+import Bridge from "../../../components/Bridge";
 
 function MonsterBridgeScreen() {
   return (

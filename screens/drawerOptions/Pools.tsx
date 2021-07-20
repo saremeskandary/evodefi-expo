@@ -28,11 +28,12 @@ function PoolsScreen() {
 
   return (
     <FlatList
+      style={{ alignSelf: "center" }}
       numColumns={col}
       keyExtractor={(item) => item.name}
       key={col}
       data={PoolData}
-      renderItem={({ item}) => (
+      renderItem={({ item }) => (
         <TokenCard
           key={item.name}
           icon={item.icon}
@@ -66,6 +67,5 @@ export default function PoolsNavigator() {
 // let Size = windowHeight == 120 ? "10%" : "100%";
 
 const styles = StyleSheet.create({
-  container: {
-  },
+  container: {},
 });

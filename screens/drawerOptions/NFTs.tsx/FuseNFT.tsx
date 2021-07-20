@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View, Image } from "react-native";
 import { Avatar, Text } from "react-native-paper";
 import ButtonPurple from "../../../components/ButtonPurple";
 import { TextStyle } from "../../../constants/Theme";
@@ -10,7 +10,7 @@ function HTWitem(props: { image: string; title: string }) {
   return (
     <View>
       <View style={styles.HTWitem}>
-        <Avatar.Image size={70} source={{ uri: props.image }} />
+        <Image style={styles.image} source={{ uri: props.image }} />
         <Text style={[TextStyle.medium, { margin: 10 }]}>{props.title}</Text>
       </View>
     </View>
@@ -61,7 +61,6 @@ function FuseNFTScreen() {
                 title="Use it"
                 image="	https://evodefi.com/images/hiw2-4.png"
               />
-              <HTWitem title="Use it" image="" />
             </View>
           </View>
         </View>
@@ -86,7 +85,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "stretch",
     flexWrap: "wrap",
-    flex: 1,
   },
   MyNFT: {
     flexGrow: 1,
@@ -104,11 +102,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     backgroundColor: "#1e1835",
     margin: 10,
-    paddingHorizontal: 80,
+    paddingHorizontal: 20,
   },
   HTWitem: {
     flexDirection: "row",
     alignItems: "center",
-    margin: 10,
+    marginVertical: 10,
+  },
+  image: {
+    width: 60,
+    height: 60,
   },
 });

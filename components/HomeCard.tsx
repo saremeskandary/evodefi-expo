@@ -22,9 +22,10 @@ export default function HomeCard(props: HomeCardInterface) {
 const styles = StyleSheet.create({
   container: {
     flexWrap: "wrap",
-    flexGrow: 1,
+    justifyContent: "space-between",
     margin: 10,
-    borderRadius: 5,
+    flexGrow: 1,
+    borderRadius: 10,
     minWidth: 300,
   },
   title: {

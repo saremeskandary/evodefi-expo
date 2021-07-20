@@ -26,7 +26,7 @@ export type DrawerParamList = {
   AllNFT: undefined;
   MysNFT: undefined;
   FuseNFT: undefined;
-  NFTsmarket: undefined;
+  NFTmarket: undefined;
   LootBox: undefined;
   Evolution: undefined;
   Eggs: undefined;

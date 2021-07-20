@@ -13,6 +13,9 @@ import PoolsNavigator from "../screens/drawerOptions/Pools";
 // import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
 import AllNFTsNavigator from "../screens/drawerOptions/NFTs.tsx/AllNFTs";
 import FuseNFTNavigator from "../screens/drawerOptions/NFTs.tsx/FuseNFT";
+import NFTbridgeNavigator from "../screens/drawerOptions/bridge/NFTbridge";
+import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
+import NFTmarketNavigator from "../screens/drawerOptions/NFTs.tsx/NFTmarket";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -20,21 +23,13 @@ export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
   return (
     <Drawer.Navigator
-      initialRouteName="FuseNFT"
+      initialRouteName="NFTmarket"
       // drawerContent={() => <DrawerContent />}
       screenOptions={{
         headerShown: true,
       }}
       //tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
     >
-      <Drawer.Screen
-        name="TabOne"
-        component={TabOneNavigator}
-        options={{
-          //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          headerTitle: "Tab One Title",
-        }}
-      />
       <Drawer.Screen
         name="Home"
         component={HomeNavigator}
@@ -44,7 +39,7 @@ export default function DrawerNavigator() {
           }
         }
       />
-      {/* <Drawer.Screen
+      <Drawer.Screen
         name="NFTbridge"
         component={NFTbridgeNavigator}
         options={
@@ -61,7 +56,7 @@ export default function DrawerNavigator() {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
           }
         }
-      /> */}
+      />
       <Drawer.Screen
         name="Pools"
         component={PoolsNavigator}
@@ -83,6 +78,15 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="FuseNFT"
         component={FuseNFTNavigator}
+        options={
+          {
+            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          }
+        }
+      />
+      <Drawer.Screen
+        name="NFTmarket"
+        component={NFTmarketNavigator}
         options={
           {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
