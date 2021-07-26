@@ -6,7 +6,7 @@ import {
   Dimensions,
 } from "react-native";
 import { MyNFTsParamList } from "../../../types";
-import NFTCard from "../../../components/NFTCard";
+import NFTCard from "../../../components/AllNFTCard";
 import { NFTsData } from "../../../data/NFTsData";
 
 const window = Dimensions.get("window");

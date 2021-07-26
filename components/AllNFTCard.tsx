@@ -3,15 +3,14 @@ import { ScrollView, StyleSheet, View, Image } from "react-native";
 import { TextStyle } from "../constants/Theme";
 import { Avatar, Text } from "react-native-paper";
 
-export interface NFTCardInterface {
+export interface AllNFTCardInterface {
   image: string;
   name: string;
   Available: boolean;
   description: string;
 }
 
-// TODO image is not good and can't be loaded in the Android Apps!
-export default function NFTCard(props: NFTCardInterface) {
+export default function AllNFTCard(props: AllNFTCardInterface) {
   return (
     <View style={styles.container}>
       <Image
@@ -46,14 +45,16 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1E1835",
     borderRadius: 10,
-    minHeight: 400,
-    minWidth: 222,
+    justifyContent: "center",
+    maxWidth: 220,
+    minHeight: 350,
     margin: 10,
-    alignItems:'stretch'
+    padding:10
   },
   image: {
-    width: 400,
+    width: 200,
     height: 200,
+    alignSelf:'center'
   },
   title: {
     margin: 10,
@@ -63,6 +64,6 @@ const styles = StyleSheet.create({
   },
   available: {
     alignItems: "center",
-    flexDirection:'row'
+    flexDirection: "row",
   },
 });

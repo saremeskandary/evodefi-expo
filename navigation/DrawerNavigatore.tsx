@@ -4,18 +4,14 @@ import * as React from "react";
 
 import useColorScheme from "../hooks/useColorScheme";
 import { DrawerParamList } from "../types";
-import TabOneNavigator from "../screens/TabOneScreen";
 import HomeNavigator from "../screens/drawerOptions/Home";
-import { DrawerContent } from "./DrawerContent";
-// import NFTbridgeNavigator from "../screens/drawerOptions/bridge/NFTbridge";
-// import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
 import PoolsNavigator from "../screens/drawerOptions/Pools";
-// import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
 import AllNFTsNavigator from "../screens/drawerOptions/NFTs.tsx/AllNFTs";
 import FuseNFTNavigator from "../screens/drawerOptions/NFTs.tsx/FuseNFT";
 import NFTbridgeNavigator from "../screens/drawerOptions/bridge/NFTbridge";
 import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
 import NFTmarketNavigator from "../screens/drawerOptions/NFTs.tsx/NFTmarket";
+import LootBoxNavigator from "../screens/drawerOptions/LootBox";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -23,7 +19,7 @@ export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
   return (
     <Drawer.Navigator
-      initialRouteName="NFTmarket"
+      initialRouteName="AllNFT"
       // drawerContent={() => <DrawerContent />}
       screenOptions={{
         headerShown: true,
@@ -87,6 +83,15 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="NFTmarket"
         component={NFTmarketNavigator}
+        options={
+          {
+            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          }
+        }
+      />
+      <Drawer.Screen
+        name="LootBox"
+        component={LootBoxNavigator}
         options={
           {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,

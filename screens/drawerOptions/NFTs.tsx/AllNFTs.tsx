@@ -1,10 +1,8 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, FlatList, View,Dimensions, ScrollView } from "react-native";
-import { Text } from "react-native-paper";
+import { StyleSheet, FlatList,Dimensions } from "react-native";
 import { AllNFTsParamList } from "../../../types";
-import { TextStyle } from "../../../constants/Theme";
-import NFTCard from "../../../components/NFTCard";
+import ALLNFTCard from "../../../components/AllNFTCard";
 import { NFTsData } from "../../../data/NFTsData";
 
 const window = Dimensions.get("window");
@@ -30,13 +28,13 @@ function AllNFTsScreen() {
   return (
     <FlatList
       contentContainerStyle={styles.list}
-      style={{ marginBottom: 20 }}
+      style={{ marginBottom: 20, alignSelf: "center" }}
       numColumns={col}
       keyExtractor={(item) => item.name}
       key={col}
       data={NFTsData}
       renderItem={({ item }) => (
-        <NFTCard
+        <ALLNFTCard
           key={item.name}
           image={item.image}
           name={item.name}
@@ -64,12 +62,13 @@ export default function AllNFTsNavigator() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
   },
   list: {
     // justifyContent:'center',
     // alignItems:'stretch',
+    flexWrap:'wrap',
     marginBottom: 10,
     alignSelf: "center",
+    padding: 10,
   },
 });

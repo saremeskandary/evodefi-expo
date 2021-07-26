@@ -1,7 +1,18 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useEffect, useState } from "react";
-import { Dimensions, FlatList, StyleSheet, View } from "react-native";
+import {
+  Dimensions,
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  View,
+  StatusBar,
+  SafeAreaView,
+} from "react-native";
+import { Button, Text } from "react-native-paper";
+import ButtonFilter from "../../../components/ButtonFilter";
 import NFTmarketCard from "../../../components/NFTmarketCard";
+import { TextStyle } from "../../../constants/Theme";
 import { NFTmarketData } from "../../../data/NFTmarketData";
 import { NFTmarketParamList } from "../../../types";
 
@@ -24,23 +35,43 @@ function NFTmarketScreen() {
       Dimensions.removeEventListener("change", onChange);
     };
   });
+
+  const FliterNames = ["sarem ", "ali", "mehdi", "ali", "mehdi"];
+
+  const items = FliterNames.map((n) => {
+    return <ButtonFilter title={n} onPress={() => {}} />;
+  });
+
   return (
-    <FlatList
-      contentContainerStyle={styles.container}
-      style={{ marginBottom: 10, alignSelf: "center" }}
-      numColumns={col}
-      keyExtractor={(item) => item.id}
-      key={col}
-      data={NFTmarketData}
-      renderItem={({ item }) => (
-        <NFTmarketCard
-          key={item.id}
-          image={item.image}
-          name={item.name}
-          price={item.price}
-        />
-      )}
-    />
+    <SafeAreaView style={styles.container}>
+      <Text style={[TextStyle.title, { marginHorizontal: 20 }]}>Market</Text>
+      <Text style={[TextStyle.title, { marginHorizontal: 20 }]}>
+        Collect NFTs and trade!!!
+      </Text>
+      <View style={styles.filters}>
+        <Text style={[TextStyle.medium,{ marginHorizontal: 20, alignSelf: "center" }]}>
+          Filters:
+        </Text>
+        {items}
+      </View>
+
+      <FlatList
+        // contentContainerStyle={styles.container}
+        style={{ marginBottom: 10, alignSelf: "center" }}
+        numColumns={col}
+        keyExtractor={(item) => item.id}
+        key={col}
+        data={NFTmarketData}
+        renderItem={({ item }) => (
+          <NFTmarketCard
+            key={item.id}
+            image={item.image}
+            name={item.name}
+            price={item.price}
+          />
+        )}
+      />
+    </SafeAreaView>
   );
 }
 
@@ -59,5 +90,11 @@ export default function NFTmarketNavigator() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+  filters: {
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
 });
