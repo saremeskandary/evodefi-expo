@@ -5,8 +5,8 @@ import {
   FlatList,
   Dimensions,
 } from "react-native";
+import AllNFTCard from "../../../components/AllNFTCard";
 import { MyNFTsParamList } from "../../../types";
-import NFTCard from "../../../components/AllNFTCard";
 import { NFTsData } from "../../../data/NFTsData";
 
 const window = Dimensions.get("window");
@@ -38,12 +38,13 @@ function MyNFTsScreen() {
       key={col}
       data={NFTsData}
       renderItem={({ item }) => (
-        <NFTCard
+        <AllNFTCard
           key={item.name}
           image={item.image}
           name={item.name}
           Available={item.Available}
           description={item.description}
+          imageSize={col === 1 ? dimensions.window.width - 60 : 350 - 40}
         />
       )}
     />

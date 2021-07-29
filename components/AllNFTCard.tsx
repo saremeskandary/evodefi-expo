@@ -8,6 +8,7 @@ export interface AllNFTCardInterface {
   name: string;
   Available: boolean;
   description: string;
+  imageSize: number;
 }
 
 export default function AllNFTCard(props: AllNFTCardInterface) {
@@ -15,7 +16,7 @@ export default function AllNFTCard(props: AllNFTCardInterface) {
     <View style={styles.container}>
       <Image
         source={{ uri: "https://evodefi.com/images/nfts/gen-6.svg" }}
-        style={styles.image}
+        style={{ width: props.imageSize, height: props.imageSize, alignSelf: "center" }}
         resizeMode={"contain"}
       />
       <View style={styles.title}>
@@ -45,22 +46,18 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1E1835",
     borderRadius: 10,
-    justifyContent: "center",
-    maxWidth: 220,
+    justifyContent: "space-between",
+    minWidth: 220,
     minHeight: 350,
     margin: 10,
-    padding:10
-  },
-  image: {
-    width: 200,
-    height: 200,
-    alignSelf:'center'
+    padding:10,
   },
   title: {
     margin: 10,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    flexWrap:'wrap'
   },
   available: {
     alignItems: "center",
