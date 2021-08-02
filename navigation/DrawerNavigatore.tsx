@@ -12,6 +12,7 @@ import NFTbridgeNavigator from "../screens/drawerOptions/bridge/NFTbridge";
 import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridge";
 import NFTmarketNavigator from "../screens/drawerOptions/NFTs.tsx/NFTmarket";
 import LootBoxNavigator from "../screens/drawerOptions/LootBox";
+import EvolutionNavigator from "../screens/drawerOptions/Evolution";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -19,7 +20,7 @@ export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
   return (
     <Drawer.Navigator
-      initialRouteName="AllNFT"
+      initialRouteName="Evolution"
       // drawerContent={() => <DrawerContent />}
       screenOptions={{
         headerShown: true,
@@ -92,6 +93,15 @@ export default function DrawerNavigator() {
       <Drawer.Screen
         name="LootBox"
         component={LootBoxNavigator}
+        options={
+          {
+            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          }
+        }
+      />
+      <Drawer.Screen
+        name="Evolution"
+        component={EvolutionNavigator}
         options={
           {
             //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
