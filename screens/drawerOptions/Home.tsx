@@ -11,7 +11,12 @@ import { Dictionary } from "../../components/Dictionary";
 function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
-      <Text style={[styles.title, { paddingHorizontal: 20, margin:10, marginBottom:0 }]}>
+      <Text
+        style={[
+          styles.title,
+          { paddingHorizontal: 20, margin: 10, marginBottom: 0 },
+        ]}
+      >
         Welcome to EVOdefi - Cross-Chain Yield Farm!
       </Text>
       <TouchableRipple
@@ -19,14 +24,13 @@ function HomeScreen() {
         onPress={() => console.log("Pressed")}
         rippleColor="rgba(0, 0, 0, .32)"
       >
-             <Image
+        <Image
           style={styles.img}
           source={{
             uri: "https://evodefi.com/images/evodefi-main-banner.png",
           }}
-        />    
-      </TouchableRipple> 
-  
+        />
+      </TouchableRipple>
 
       <View style={styles.cardContainer}>
         <HomeCard title="TVL" backgroundColor="#69b96d">
@@ -37,11 +41,11 @@ function HomeScreen() {
         </HomeCard>
 
         <HomeCard title="GenXStats" backgroundColor="#1e1835">
-          <Dictionary title="Market Cap" content="$1,700,307" />
-          <Dictionary title="Total Minted" content="$1,700,307" />
-          <Dictionary title="Total Burned" content="$1,700,307" />
-          <Dictionary title="Circulating Supply" content="$1,700,307" />
-          <Dictionary title="New GenX/block" content="$1,700,307" />
+            <Dictionary title="Market Cap" content="$1,700,307" />
+            <Dictionary title="Total Minted" content="$1,700,307" />
+            <Dictionary title="Total Burned" content="$1,700,307" />
+            <Dictionary title="Circulating Supply" content="$1,700,307" />
+            <Dictionary title="New GenX/block" content="$1,700,307" />
         </HomeCard>
       </View>
     </ScrollView>
@@ -62,7 +66,7 @@ export default function HomeNavigator() {
   );
 }
 
-let dim = Dimensions.get('window')
+let dim = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {

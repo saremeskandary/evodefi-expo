@@ -10,7 +10,7 @@ function NFTbridgeScreen() {
   return (
       <Bridge
         commission={" NFT bridge has commission 0.1 GenX "}
-        arrowAction={"https://evo-matic.com/nft/bridge"} //TODO maybe this cause a problem
+        arrowAction={"https://evo-matic.com/nft/bridge"}
         selectionTitle={"Select NFT"}
         plusePressed={
           <Dialog.Content

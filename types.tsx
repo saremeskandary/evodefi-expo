@@ -9,16 +9,10 @@ export type RootStackParamList = {
   NotFound: undefined;
 };
 
-export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
-};
-
 export type DrawerParamList = {
-  TabOne: undefined;
   Home: undefined;
   Exchange: undefined;
-  TokenBridge: undefined;  
+  TokenBridge: undefined;
   NFTbridge: undefined;
   MonsterBridge: undefined;
   Farms: undefined;
@@ -34,14 +28,12 @@ export type DrawerParamList = {
   Breed: undefined;
   Fuse: undefined;
   Market: undefined;
-  EvoMatic: undefined;  
-  DrawerContent: undefined; 
+  EvoMatic: undefined;
+  Referral: undefined;
+  DrawerContent: undefined;
 };
 
 // screens ########################################################
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
 export type TabTwoParamList = {
   TabTwoScreen: undefined
 ;}
@@ -111,6 +103,11 @@ export type MarketParamList = {
 
 export type EvoMaticParamList = {
   EvoMaticScreen: undefined;
+};
+
+
+export type ReferralParamList = {
+  ReferralScreen: undefined;
 };
 
 

@@ -13,8 +13,7 @@ export default function HomeCard(props: HomeCardInterface) {
   return (
     <View style={[styles.container, {backgroundColor : props.backgroundColor}]}>
       <Text style={styles.title}>{props.title}</Text>
-      {/* <Seperator/> */}
-      <View style={styles.Children}>{props.children}</View>      
+      <View style={[{flex:1, minWidth: 400},styles.Children]}>{props.children}</View>      
     </View>
   );
 }

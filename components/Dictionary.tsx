@@ -25,7 +25,7 @@ export function Dictionary({
       <View
         style={[
           {
-            justifyContent: "flex-start",
+            justifyContent: "space-between",
             flexDirection: "row",
             alignItems: "center",
           },

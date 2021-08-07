@@ -13,6 +13,12 @@ import MonsterBridgeNavigator from "../screens/drawerOptions/bridge/MonstetBridg
 import NFTmarketNavigator from "../screens/drawerOptions/NFTs.tsx/NFTmarket";
 import LootBoxNavigator from "../screens/drawerOptions/LootBox";
 import EvolutionNavigator from "../screens/drawerOptions/Evolution";
+import EggsNavigator from "../screens/drawerOptions/NFTmonsterBattel/Eggs";
+import MyMonstersNavigator from "../screens/drawerOptions/NFTmonsterBattel/MyMonsters";
+import BreedNavigator from "../screens/drawerOptions/NFTmonsterBattel/Breed";
+import FuseNavigator from "../screens/drawerOptions/NFTmonsterBattel/Fuse";
+import MarketNavigator from "../screens/drawerOptions/NFTmonsterBattel/Market";
+import ReferralNavigator from "../screens/Referral";
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -20,7 +26,7 @@ export default function DrawerNavigator() {
   const colorScheme = useColorScheme();
   return (
     <Drawer.Navigator
-      initialRouteName="Evolution"
+      initialRouteName="Home"
       // drawerContent={() => <DrawerContent />}
       screenOptions={{
         headerShown: true,
@@ -36,78 +42,20 @@ export default function DrawerNavigator() {
           }
         }
       />
-      <Drawer.Screen
-        name="NFTbridge"
-        component={NFTbridgeNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="MonsterBridge"
-        component={MonsterBridgeNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="Pools"
-        component={PoolsNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="AllNFT"
-        component={AllNFTsNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="FuseNFT"
-        component={FuseNFTNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="NFTmarket"
-        component={NFTmarketNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="LootBox"
-        component={LootBoxNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
-      <Drawer.Screen
-        name="Evolution"
-        component={EvolutionNavigator}
-        options={
-          {
-            //tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-          }
-        }
-      />
+      <Drawer.Screen name="NFTbridge" component={NFTbridgeNavigator} />
+      <Drawer.Screen name="MonsterBridge" component={MonsterBridgeNavigator} />
+      <Drawer.Screen name="Pools" component={PoolsNavigator} />
+      <Drawer.Screen name="AllNFT" component={AllNFTsNavigator} />
+      <Drawer.Screen name="FuseNFT" component={FuseNFTNavigator} />
+      <Drawer.Screen name="NFTmarket" component={NFTmarketNavigator} />
+      <Drawer.Screen name="LootBox" component={LootBoxNavigator} />
+      <Drawer.Screen name="Evolution" component={EvolutionNavigator} />
+      <Drawer.Screen name="Eggs" component={EggsNavigator} />
+      <Drawer.Screen name="MyMonsters" component={MyMonstersNavigator} />
+      <Drawer.Screen name="Breed" component={BreedNavigator} />
+      <Drawer.Screen name="Fuse" component={FuseNavigator} />
+      <Drawer.Screen name="Market" component={MarketNavigator} />
+      <Drawer.Screen name="Referral" component={ReferralNavigator} />
     </Drawer.Navigator>
   );
 }

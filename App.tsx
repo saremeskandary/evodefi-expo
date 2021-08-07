@@ -7,8 +7,8 @@ import { DTheme, LTheme } from "./constants/Theme";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
-const rootReducers = combineReducers({});
-const store = createStore(rootReducers);
+// const rootReducers = combineReducers({});
+// const store = createStore(rootReducers);
 
 export const PreferencesContext = React.createContext({
   toggleTheme: () => {},
@@ -35,13 +35,13 @@ export default function App() {
     return null;
   } else {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <PreferencesContext.Provider value={preferences}>
           <PaperProvider theme={theme}>
             <Navigation theme={theme} />
           </PaperProvider>
         </PreferencesContext.Provider>
-      </Provider>
+      // </Provider>
     );
   }
 }

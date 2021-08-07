@@ -18,8 +18,6 @@ export interface TokenCardInterface {
   MainnetExplorer?: string;
 }
 
-// TODO icon should add later
-
 export default function TokenCard(props: TokenCardInterface) {
   const [show, setShow] = React.useState(false);
   return (

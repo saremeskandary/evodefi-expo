@@ -20,7 +20,6 @@ function AllNFTsScreen() {
       ? setCol(Math.floor(dimensions.window.width / 350))
       : setCol(1);
     return () => {
-      console.log(col);
       Dimensions.removeEventListener("change", onChange);
     };
   });
